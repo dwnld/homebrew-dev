@@ -2,6 +2,7 @@ require "formula"
 
 class ThriftDwnld < Formula
   homepage "http://thrift.apache.org"
+  version '1.0.0-dwld-0'
 
   stable do
     url "https://github.com/dwnld/thrift.git", :branch => 'dwnld'
@@ -19,9 +20,12 @@ class ThriftDwnld < Formula
   depends_on "libevent" => :optional
   depends_on :python => :optional
   depends_on "bison" => :build
+  depends_on "libtool" => :build
+  depends_on "automake" => :build
+  depends_on "autoconf" => :build
 
   def install
-    system "./bootstrap.sh" unless build.stable?
+    system "./bootstrap.sh"
 
     exclusions = ["--without-ruby", "--disable-tests", "--without-php_extension"]
 
