@@ -2,7 +2,7 @@ require "formula"
 
 class ThriftDwnld < Formula
   homepage "http://thrift.apache.org"
-  version '1.0.0-dwld-0'
+  version '1.0.0-dwnld-1'
 
   stable do
     url "https://github.com/dwnld/thrift.git", :branch => 'dwnld'
